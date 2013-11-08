@@ -16,10 +16,7 @@
   limitations under the License.
 -->
 <tomcat-users>
-  <role rolename="photo-user" />
   <role rolename="solution-admin" />
   <role rolename="tomee-admin" />
-  <user username="admin" password="admin" roles="solution-admin,tomee-admin,photo-user" />
-  <user username="user1" password="a" roles="photo-user" />
-  <user username="user2" password="a" roles="photo-user" />
+  <user username="admin" password="admin" roles="solution-admin,tomee-admin" />
 </tomcat-users>

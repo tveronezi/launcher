@@ -52,8 +52,8 @@
         <artifactId>tomee-maven-plugin</artifactId>
         <version>${tomee.version}</version>
         <configuration>
-          <context>launcher</context>
-          <args>-Xmx512m -XX:PermSize=256m</args>
+          <context>ROOT</context>
+          <args>-Xmx512m -XX:PermSize=256m -Djava.security.auth.login.config=${project.basedir}/src/main/tomee/conf/login.config</args>
           <tomeeClassifier>plus</tomeeClassifier>
           <debug>${debug.it}</debug>
           <webapps>
