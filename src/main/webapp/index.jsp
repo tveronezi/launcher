@@ -23,10 +23,24 @@ limitations under the License.
     <title>launcher</title>
 </head>
 <body>
-<ul>
-    <li><a href="<c:url value='/../msglnk/'/>">msglnk</a></li>
-    <li><a href="<c:url value='/../faceid/'/>">faceid</a></li>
-    <li><a href="<c:url value='/../photodb/'/>">photodb</a></li>
-</ul>
+<div>
+    <p>
+        Credentials for FaceID and Msglnk:
+    </p>
+    <ul>
+        <li>user: <b>admin</b></li>
+        <li>password: <b>admin</b></li>
+    </ul>
+    <p>
+        In order to use PhotoDB, you should first create a mail session called <b>user-request</b> in Msglnk. After
+        that, go to PhotoDB and request a new user. These are the available applications:
+    </p>
+    <ul>
+        <li><a href="<c:url value='/../msglnk/'/>">msglnk</a></li>
+        <li><a href="<c:url value='/../faceid/'/>">faceid</a></li>
+        <li><a href="<c:url value='/../photodb/'/>">photodb</a></li>
+        <li><a href="<c:url value='/../webaccess/'/>">webaccess</a></li>
+    </ul>
+</div>
 </body>
 </html>
