@@ -24,10 +24,9 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <tomee.version>1.6.0-SNAPSHOT</tomee.version>
-    <openejb.version>4.6.0-SNAPSHOT</openejb.version>
-    <javaee.api>6.0-5</javaee.api>
-    <scala.version>2.9.2</scala.version>
-    <scala.plugin.version>2.15.2</scala.plugin.version>
+    <server.args>
+      -Xmx512m -XX:PermSize=256m -Djava.security.auth.login.config=${project.basedir}/src/main/tomee/conf/login.config
+    </server.args>
     <debug.it>false</debug.it>
   </properties>
   <profiles>
@@ -38,11 +37,28 @@
       </properties>
     </profile>
   </profiles>
+  <repositories>
+    <repository>
+      <id>apache-m2-snapshot</id>
+      <name>Apache Snapshot Repository</name>
+      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+    </repository>
+    <repository>
+      <id>apache-m2-release</id>
+      <name>Apache Release Repository</name>
+      <url>https://repository.apache.org/content/repositories/releases/</url>
+    </repository>
+  </repositories>
   <pluginRepositories>
     <pluginRepository>
-      <id>apache-m2-snapshot-plugin</id>
+      <id>apache-m2-snapshot</id>
       <name>Apache Snapshot Repository</name>
-      <url>http://repository.apache.org/snapshots</url>
+      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>apache-m2-release</id>
+      <name>Apache Release Repository</name>
+      <url>https://repository.apache.org/content/repositories/releases/</url>
     </pluginRepository>
   </pluginRepositories>
   <build>
@@ -53,7 +69,7 @@
         <version>${tomee.version}</version>
         <configuration>
           <context>ROOT</context>
-          <args>-Xmx512m -XX:PermSize=256m -Djava.security.auth.login.config=${project.basedir}/src/main/tomee/conf/login.config</args>
+          <args>${server.args}</args>
           <tomeeClassifier>plus</tomeeClassifier>
           <debug>${debug.it}</debug>
           <webapps>
