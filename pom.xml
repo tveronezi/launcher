@@ -28,6 +28,7 @@
       -Xmx512m -XX:PermSize=256m -Djava.security.auth.login.config=${project.basedir}/src/main/tomee/conf/login.config
     </server.args>
     <debug.it>false</debug.it>
+    <tomee.config.dir>${project.basedir}/src/main/tomee/conf</tomee.config.dir>
   </properties>
   <profiles>
     <profile>
@@ -69,6 +70,7 @@
         <version>${tomee.version}</version>
         <configuration>
           <context>ROOT</context>
+          <config>${tomee.config.dir}</config>
           <args>${server.args}</args>
           <tomeeClassifier>plus</tomeeClassifier>
           <debug>${debug.it}</debug>
