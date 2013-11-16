@@ -18,9 +18,23 @@
     under the License.
 -->
 <tomee>
-  <Resource id="HSQLDB Database" type="DataSource">
+  <Resource id="msglnkJTA" type="DataSource">
     JdbcDriver org.hsqldb.jdbcDriver
-    JdbcUrl jdbc:hsqldb:file:target/db/solutiondb
+    JdbcUrl jdbc:hsqldb:file:target/db/msglnk
+    UserName sa
+    Password
+  </Resource>
+
+  <Resource id="faceidJTA" type="DataSource">
+    JdbcDriver org.hsqldb.jdbcDriver
+    JdbcUrl jdbc:hsqldb:file:target/db/faceid
+    UserName sa
+    Password
+  </Resource>
+
+  <Resource id="photoJTA" type="DataSource">
+    JdbcDriver org.hsqldb.jdbcDriver
+    JdbcUrl jdbc:hsqldb:file:target/db/photodb
     UserName sa
     Password
   </Resource>
