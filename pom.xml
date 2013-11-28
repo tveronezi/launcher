@@ -23,12 +23,14 @@
   <name>launcher</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tomee.version>1.6.0-SNAPSHOT</tomee.version>
+    <tomee.version>1.6.0</tomee.version>
     <server.args>
       -Xmx512m -XX:PermSize=256m -Djava.security.auth.login.config=${project.basedir}/src/main/tomee/conf/login.config
     </server.args>
     <debug.it>false</debug.it>
     <tomee.config.dir>${project.basedir}/src/main/tomee/conf</tomee.config.dir>
+    <release.repo.url>https://repository.apache.org/content/repositories/releases/</release.repo.url>
+    <snapshots.repo.url>https://repository.apache.org/content/repositories/snapshots/</snapshots.repo.url>
   </properties>
   <profiles>
     <profile>
@@ -42,24 +44,24 @@
     <repository>
       <id>apache-m2-snapshot</id>
       <name>Apache Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+      <url>${snapshots.repo.url}</url>
     </repository>
     <repository>
       <id>apache-m2-release</id>
       <name>Apache Release Repository</name>
-      <url>https://repository.apache.org/content/repositories/releases/</url>
+      <url>${release.repo.url}</url>
     </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
       <id>apache-m2-snapshot</id>
       <name>Apache Snapshot Repository</name>
-      <url>https://repository.apache.org/content/repositories/snapshots/</url>
+      <url>${snapshots.repo.url}</url>
     </pluginRepository>
     <pluginRepository>
       <id>apache-m2-release</id>
       <name>Apache Release Repository</name>
-      <url>https://repository.apache.org/content/repositories/releases/</url>
+      <url>${release.repo.url}</url>
     </pluginRepository>
   </pluginRepositories>
   <build>
